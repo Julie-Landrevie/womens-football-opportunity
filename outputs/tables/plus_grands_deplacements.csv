@@ -1,0 +1,51 @@
+indicateur,joueuse,equipe,poste,part_possession,percentile_p90,percentile_poss,delta_pts
+npxg,Chloe Kelly,Manchester City WFC,W,0.64,65.0,35.0,-29.0
+npxg,Leila Ouahabi,Manchester City WFC,FB,0.63,71.0,44.0,-26.5
+npxg,Amalie Thestrup,Bristol City WFC,FW,0.33,26.0,52.0,26.1
+npxg,Mia Enderby,Liverpool WFC,W,0.41,42.0,68.0,25.8
+npxg,Naomi Layzell,Bristol City WFC,CB,0.31,55.0,80.0,25.0
+npxg,Mary Boio Fowler,Manchester City WFC,W,0.6,29.0,6.0,-22.6
+npxg,Lauren James,Chelsea FCW,FW,0.61,83.0,61.0,-21.7
+npxg,Brooke Aspin,Bristol City WFC,CB,0.31,67.0,89.0,21.6
+npxg,Laia Aleixandri,Manchester City WFC,CB,0.64,70.0,52.0,-18.2
+npxg,Chloe Mustaki,Bristol City WFC,CB,0.31,30.0,48.0,18.2
+xa,Tatiana Pinto,Brighton & Hove Albion WFC,AM,0.44,14.0,57.0,42.9
+xa,Kim Little,Arsenal WFC,AM,0.61,57.0,29.0,-28.6
+xa,Amalie Thestrup,Bristol City WFC,FW,0.33,22.0,48.0,26.1
+xa,Ffion Morgan,Bristol City WFC,W,0.33,39.0,65.0,25.8
+xa,Abigail Harrison,Bristol City WFC,FW,0.33,35.0,57.0,21.7
+xa,Leila Ouahabi,Manchester City WFC,FB,0.63,71.0,50.0,-20.6
+xa,Caitlin Foord,Arsenal WFC,W,0.62,61.0,42.0,-19.4
+xa,Steph Catley,Arsenal WFC,FB,0.61,81.0,62.0,-19.1
+xa,Sophie Roman Haug,Liverpool WFC,FW,0.45,70.0,87.0,17.4
+xa,Martha Thomas,Tottenham Hotspur Women,FW,0.48,52.0,35.0,-17.4
+prog,Jamie-Lee Napier,Bristol City WFC,FB,0.32,38.0,85.0,47.1
+prog,Ffion Morgan,Bristol City WFC,W,0.33,16.0,58.0,41.9
+prog,Carrie Jones,Bristol City WFC,DM,0.32,18.0,57.0,39.3
+prog,Abigail Harrison,Bristol City WFC,FW,0.33,22.0,61.0,39.1
+prog,Ella Powell,Bristol City WFC,FB,0.32,12.0,50.0,38.2
+prog,Kerstin Casparij,Manchester City WFC,FB,0.59,71.0,35.0,-35.3
+prog,Leila Ouahabi,Manchester City WFC,FB,0.63,50.0,15.0,-35.3
+prog,Sam Kerr,Chelsea FCW,FW,0.64,48.0,13.0,-34.8
+prog,Yui Hasegawa,Manchester City WFC,DM,0.63,54.0,25.0,-28.6
+prog,Jill Roord,Manchester City WFC,CM,0.62,67.0,40.0,-26.7
+pressures,Ffion Morgan,Bristol City WFC,W,0.33,65.0,3.0,-61.3
+pressures,Drew Spence,Tottenham Hotspur Women,AM,0.53,71.0,14.0,-57.1
+pressures,Ella Powell,Bristol City WFC,FB,0.32,59.0,9.0,-50.0
+pressures,Alessia Russo,Arsenal WFC,FW,0.61,30.0,78.0,47.8
+pressures,Jamie-Lee Napier,Bristol City WFC,FB,0.32,91.0,47.0,-44.1
+pressures,Katie McCabe,Arsenal WFC,FB,0.61,15.0,59.0,44.1
+pressures,Leila Ouahabi,Manchester City WFC,FB,0.63,24.0,65.0,41.2
+pressures,Ceri Holland,Liverpool WFC,CM,0.45,80.0,40.0,-40.0
+pressures,Yui Hasegawa,Manchester City WFC,DM,0.63,25.0,64.0,39.3
+pressures,Viviane Asseyi,West Ham United LFC,W,0.42,68.0,29.0,-38.7
+ball_wins,Tatiana Pinto,Brighton & Hove Albion WFC,AM,0.44,71.0,14.0,-57.1
+ball_wins,Abigail Harrison,Bristol City WFC,FW,0.33,96.0,43.0,-52.2
+ball_wins,Hinata Miyazawa,Manchester United W,CM,0.6,47.0,93.0,46.7
+ball_wins,Millie Turner,Manchester United W,CB,0.57,20.0,64.0,43.2
+ball_wins,Sophie Ingle,Chelsea FCW,DM,0.63,7.0,50.0,42.9
+ball_wins,Drew Spence,Tottenham Hotspur Women,AM,0.53,86.0,43.0,-42.9
+ball_wins,Francesca Kirby,Chelsea FCW,AM,0.61,43.0,86.0,42.9
+ball_wins,Steph Catley,Arsenal WFC,FB,0.61,18.0,59.0,41.2
+ball_wins,Kathrine Kühl,Everton LFC,CM,0.47,80.0,40.0,-40.0
+ball_wins,Khadija Shaw,Manchester City WFC,FW,0.62,57.0,96.0,39.1

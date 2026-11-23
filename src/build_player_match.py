@@ -5,7 +5,8 @@ mesures d'opportunité de l'étape 1 :
   - temps de jeu (secondes et minutes, temps additionnel compris), titulaire ou non ;
   - poste principal (le plus de temps joué) et groupe de postes ;
   - possessions de l'équipe et de l'adversaire pendant qu'elle est sur le terrain
-    (nombre, et temps « ballon vivant » : du premier événement à la fin du dernier) ;
+    (nombre, et temps de possession : du premier événement de jeu à la fin du dernier,
+    événements administratifs exclus) ;
   - ballons reçus (événements Ball Receipt*, tous et réussis) ;
   - adversaire, domicile/extérieur, score, buts pour/contre pendant sa présence.
 
@@ -23,6 +24,10 @@ from pathlib import Path
 import pandas as pd
 
 PERIOD_START_CLOCK = {1: 0, 2: 45 * 60, 3: 90 * 60, 4: 105 * 60}
+
+# Événements qui ne sont pas du jeu : exclus du calcul des durées de possession.
+ADMIN_EVENTS = {"Starting XI", "Half Start", "Half End", "Substitution", "Tactical Shift",
+                "Injury Stoppage", "Player On", "Player Off", "Bad Behaviour", "Referee Ball-Drop"}
 
 POSITION_GROUP = {
     "Goalkeeper": "GK",
@@ -81,9 +86,13 @@ def process_match(match: dict, events: list, lineups: list) -> list[dict]:
 
     ev = [e for e in events if e["period"] in offset]
 
-    # Possessions : équipe, début, fin « ballon vivant », fin « jusqu'à la suivante ».
+    # Possessions : équipe, début et fin, du premier au dernier événement de jeu.
+    # Les événements administratifs (fin de période, remplacement, blessure…) sont ignorés :
+    # ils prolongeaient la possession en cours pendant les arrêts de jeu (+7,6 min par match).
     poss = {}
     for e in ev:
+        if e["type"]["name"] in ADMIN_EVENTS:
+            continue
         t0 = ev_t(e)
         t1 = t0 + float(e.get("duration") or 0.0)
         k = e["possession"]

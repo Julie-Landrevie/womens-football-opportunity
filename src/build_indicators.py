@@ -18,8 +18,8 @@ Versions :
   p90        total / minutes × 90
   poss       offensifs : par 30 min de possession de l'équipe pendant sa présence ;
              défensifs : par 30 min de possession adverse pendant sa présence
-             (logique TIP / OTIP de SkillCorner ; ici, possession « ballon vivant »
-             reconstruite à partir des événements)
+             (logique TIP / OTIP de SkillCorner ; ici, temps de possession
+             reconstruit à partir des événements de jeu)
   adj        par 90, ajusté au niveau de l'adversaire : total ÷ Σ(minutes/90 × facteur
              de l'adversaire). Facteur = ce que les équipes produisent contre cet
              adversaire (par 90, toutes joueuses) ÷ moyenne de la ligue, calculé en

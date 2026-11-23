@@ -1,0 +1,16 @@
+league,indicateur,tranche,n,part_dans_top10_p90,part_dans_top10_attendue,ecart_type_percentile
+fbl,npxg,< 450 min,81,0.16,0.1,0.35
+fbl,npxg,450-900 min,55,0.055,0.1,0.266
+fbl,npxg,≥ 900 min,134,0.104,0.1,0.233
+fbl,xa,< 450 min,81,0.099,0.1,0.297
+fbl,xa,450-900 min,55,0.091,0.1,0.281
+fbl,xa,≥ 900 min,134,0.127,0.1,0.239
+fbl,prog,< 450 min,81,0.123,0.1,0.326
+fbl,prog,450-900 min,55,0.036,0.1,0.238
+fbl,prog,≥ 900 min,134,0.134,0.1,0.267
+fbl,pressures,< 450 min,81,0.235,0.1,0.351
+fbl,pressures,450-900 min,55,0.127,0.1,0.28
+fbl,pressures,≥ 900 min,134,0.03,0.1,0.247
+fbl,ball_wins,< 450 min,81,0.185,0.1,0.35
+fbl,ball_wins,450-900 min,55,0.073,0.1,0.251
+fbl,ball_wins,≥ 900 min,134,0.082,0.1,0.256

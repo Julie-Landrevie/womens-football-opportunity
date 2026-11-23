@@ -1,0 +1,6 @@
+league,indicateur,titulaires_match_complet,p90_avant,p90_fin_de_match,ratio_fin_sur_avant
+seriea,npxg,456,0.121,0.15,1.24
+seriea,xa,456,0.081,0.096,1.18
+seriea,prog,456,3.871,3.784,0.98
+seriea,pressures,456,15.989,13.507,0.84
+seriea,ball_wins,456,6.308,5.847,0.93

@@ -1,4 +1,4 @@
-"""Table « joueuse × match » — FA WSL 2023/24 (StatsBomb Open Data).
+"""Table « joueuse × match » par ligue (StatsBomb Open Data, championnats féminins 2023/24).
 
 Une ligne par joueuse ayant joué (temps de jeu > 0) dans un match, avec les
 mesures d'opportunité de l'étape 1 :
@@ -14,7 +14,7 @@ Horloge : StatsBomb remet l'horloge à 45:00 au début de la 2e période, alors 
 la 1re période peut aller jusqu'à 47:xx. Tout est donc converti en « temps écoulé »
 continu (somme des durées réelles des périodes précédentes + temps dans la période).
 
-Usage : python src/build_player_match.py [dossier_raw] [dossier_sortie]
+Usage : python src/build_player_match.py <wsl|fbl|ligaf|seriea|all> [dossier_raw] [dossier_sortie]
 Données : StatsBomb Open Data. Crédit : « Data: StatsBomb ».
 """
 import json
@@ -22,6 +22,8 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+from leagues import LEAGUES, resolve
 
 PERIOD_START_CLOCK = {1: 0, 2: 45 * 60, 3: 90 * 60, 4: 105 * 60}
 
@@ -218,8 +220,9 @@ def process_match(match: dict, events: list, lineups: list) -> list[dict]:
     return rows
 
 
-def main(raw_dir: str = "data_raw", out_dir: str = "data/processed") -> None:
-    raw, out = Path(raw_dir), Path(out_dir)
+def build_league(key: str, raw_root: str = "data_raw", out_dir: str = "data/processed") -> pd.DataFrame:
+    lg = LEAGUES[key]
+    raw, out = Path(raw_root) / lg["slug"], Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     matches = json.loads(next(raw.glob("matches_*.json")).read_text())
     rows = []
@@ -232,9 +235,17 @@ def main(raw_dir: str = "data_raw", out_dir: str = "data/processed") -> None:
                                         ascending=[True, True, True, False, True])
     df["team_possession_share_on"] = (df.team_possession_s_on /
                                       (df.team_possession_s_on + df.opp_possession_s_on)).round(3)
-    df.to_csv(out / "player_match_wsl_2324.csv", index=False)
-    print(f"{len(df)} lignes joueuse × match, {df.match_id.nunique()} matchs, "
-          f"{df.player_id.nunique()} joueuses → {out/'player_match_wsl_2324.csv'}")
+    df.insert(0, "league", key)
+    dest = out / f"player_match_{lg['slug']}.csv"
+    df.to_csv(dest, index=False)
+    print(f"{lg['name']} : {len(df)} lignes joueuse × match, {df.match_id.nunique()} matchs, "
+          f"{df.player_id.nunique()} joueuses → {dest}")
+    return df
+
+
+def main(league: str = "wsl", raw_root: str = "data_raw", out_dir: str = "data/processed") -> None:
+    for key in resolve(league):
+        build_league(key, raw_root, out_dir)
 
 
 if __name__ == "__main__":

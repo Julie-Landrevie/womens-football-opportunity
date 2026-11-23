@@ -1,0 +1,51 @@
+league,indicateur,joueuse,equipe,poste,part_possession,percentile_p90,percentile_poss,delta_pts
+fbl,npxg,Sarah Freutel,Duisburg WFC,FB,0.35,65.0,88.0,22.7
+fbl,npxg,Amira Arfaoui,Nürnberg W,AM,0.38,33.0,56.0,22.2
+fbl,npxg,Lina Magull,Bayern München W,W,0.61,85.0,63.0,-22.2
+fbl,npxg,Yvonne Zielinski,Duisburg WFC,W,0.33,22.0,44.0,22.2
+fbl,npxg,Kara Bathmann,Duisburg WFC,FB,0.35,48.0,67.0,18.2
+fbl,npxg,Alina Mailbeck,Nürnberg W,DM,0.4,33.0,50.0,16.7
+fbl,npxg,Ereleta Memeti,Hoffenheim W,W,0.53,48.0,31.0,-16.7
+fbl,npxg,Lisanne Gräwe,Eintracht Frankfurt W,DM,0.61,70.0,53.0,-16.7
+fbl,npxg,Natalie Rose Muth,Duisburg WFC,DM,0.34,53.0,70.0,16.7
+fbl,npxg,Lara Prašnikar,Eintracht Frankfurt W,FW,0.6,52.0,36.0,-16.0
+fbl,xa,Lisa Josten,Duisburg WFC,FW,0.37,52.0,80.0,28.0
+fbl,xa,Medina Desic,Nürnberg W,FW,0.39,48.0,72.0,24.0
+fbl,xa,Amira Arfaoui,Nürnberg W,AM,0.38,33.0,56.0,22.2
+fbl,xa,Antonia-Johanna Halverkamps,Duisburg WFC,W,0.35,30.0,52.0,22.2
+fbl,xa,Fenna Kalma,VfL Wolfsburg WFC,FW,0.65,68.0,48.0,-20.0
+fbl,xa,Franziska Mai,Nürnberg W,FB,0.38,30.0,48.0,18.2
+fbl,xa,Lisanne Gräwe,Eintracht Frankfurt W,DM,0.61,60.0,43.0,-16.7
+fbl,xa,Sarah Zadrazil,Bayern München W,DM,0.62,70.0,53.0,-16.7
+fbl,xa,Nicole Anyomi,Eintracht Frankfurt W,FW,0.59,76.0,60.0,-16.0
+fbl,xa,Ereleta Memeti,Hoffenheim W,W,0.53,59.0,44.0,-14.8
+fbl,prog,Madeleine Steck,Nürnberg W,CB,0.38,54.0,82.0,28.2
+fbl,prog,Lea Schüller,Bayern München W,FW,0.62,36.0,8.0,-28.0
+fbl,prog,Amira Arfaoui,Nürnberg W,AM,0.38,67.0,89.0,22.2
+fbl,prog,Jovana Damnjanović,Bayern München W,AM,0.64,89.0,67.0,-22.2
+fbl,prog,Marlene Müller,RB Leipzig W,W,0.44,48.0,70.0,22.2
+fbl,prog,Sydney Lohmann,Bayern München W,W,0.59,37.0,15.0,-22.2
+fbl,prog,Giulia Gwinn,Bayern München W,FB,0.62,70.0,48.0,-21.2
+fbl,prog,Josefine Schaller,RB Leipzig W,FB,0.37,33.0,55.0,21.2
+fbl,prog,Tuva Hansen,Bayern München W,FB,0.62,97.0,76.0,-21.2
+fbl,prog,Sophia Kleinherne,Eintracht Frankfurt W,CB,0.59,85.0,64.0,-20.5
+fbl,pressures,Miray Cin,Duisburg WFC,CM,0.35,100.0,27.0,-72.7
+fbl,pressures,Antonia-Johanna Halverkamps,Duisburg WFC,W,0.35,96.0,26.0,-70.4
+fbl,pressures,Kerstin Bogenschütz,Nürnberg W,AM,0.37,89.0,22.0,-66.7
+fbl,pressures,Vivien Endemann,VfL Wolfsburg WFC,W,0.65,19.0,85.0,66.7
+fbl,pressures,Chantal Hagel,VfL Wolfsburg WFC,CM,0.64,36.0,100.0,63.6
+fbl,pressures,Lynn Wilms,VfL Wolfsburg WFC,FB,0.64,15.0,76.0,60.6
+fbl,pressures,Kara Bathmann,Duisburg WFC,FB,0.35,97.0,39.0,-57.6
+fbl,pressures,Natalie Rose Muth,Duisburg WFC,DM,0.34,67.0,10.0,-56.7
+fbl,pressures,Linda Dallmann,Bayern München W,W,0.62,33.0,89.0,55.6
+fbl,pressures,Yvonne Zielinski,Duisburg WFC,W,0.33,63.0,7.0,-55.6
+fbl,ball_wins,Alexandria Loy Hess,Duisburg WFC,FW,0.36,84.0,28.0,-56.0
+fbl,ball_wins,Jelena Prvulovic,Duisburg WFC,FW,0.37,72.0,20.0,-52.0
+fbl,ball_wins,Kara Bathmann,Duisburg WFC,FB,0.35,85.0,33.0,-51.5
+fbl,ball_wins,Vivien Endemann,VfL Wolfsburg WFC,W,0.65,33.0,81.0,48.1
+fbl,ball_wins,Fenna Kalma,VfL Wolfsburg WFC,FW,0.65,44.0,92.0,48.0
+fbl,ball_wins,Miray Cin,Duisburg WFC,CM,0.35,64.0,18.0,-45.5
+fbl,ball_wins,Svenja Huth,VfL Wolfsburg WFC,CM,0.63,55.0,100.0,45.5
+fbl,ball_wins,Tuva Hansen,Bayern München W,FB,0.62,9.0,55.0,45.5
+fbl,ball_wins,Vanessa Fürst,Duisburg WFC,CB,0.35,92.0,49.0,-43.6
+fbl,ball_wins,Kathrin Hendrich,VfL Wolfsburg WFC,CB,0.63,49.0,87.0,38.5

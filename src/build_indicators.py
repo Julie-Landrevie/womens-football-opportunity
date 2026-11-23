@@ -1,9 +1,9 @@
-"""Étape 2 — Indicateurs de performance et leurs quatre versions (FA WSL 2023/24).
+"""Étape 2 — Indicateurs de performance et leurs quatre versions, par ligue.
 
-Entrées : data_raw/events/*.json, data/processed/player_match_wsl_2324.csv (étape 1).
+Entrées : data_raw/<slug>/events/*.json, data/processed/player_match_<slug>.csv (étape 1).
 Sorties :
-  - data/processed/player_match_indicators_wsl_2324.csv : table joueuse × match + comptes ;
-  - data/processed/player_season_versions_wsl_2324.csv : une ligne par joueuse (et équipe),
+  - data/processed/player_match_indicators_<slug>.csv : table joueuse × match + comptes ;
+  - data/processed/player_season_versions_<slug>.csv : une ligne par joueuse (et équipe),
     chaque indicateur en 4 versions : total, par 90, par possession, ajusté à l'adversaire.
 
 Indicateurs (5) :
@@ -25,7 +25,7 @@ Versions :
              adversaire (par 90, toutes joueuses) ÷ moyenne de la ligue, calculé en
              excluant l'équipe de la joueuse (sinon elle se compare à elle-même).
 
-Usage : python src/build_indicators.py [dossier_raw] [dossier_processed]
+Usage : python src/build_indicators.py <wsl|fbl|ligaf|seriea|all> [dossier_raw] [dossier_processed]
 Données : StatsBomb Open Data. Crédit : « Data: StatsBomb ».
 """
 import json
@@ -34,6 +34,8 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+from leagues import LEAGUES, resolve
 
 GOAL = (120.0, 40.0)
 SET_PIECES = {"Corner", "Free Kick", "Goal Kick", "Kick Off", "Throw-in"}
@@ -148,9 +150,10 @@ def season_versions(pm: pd.DataFrame) -> pd.DataFrame:
     return out.round(4)
 
 
-def main(raw_dir: str = "data_raw", proc_dir: str = "data/processed") -> None:
-    raw, proc = Path(raw_dir), Path(proc_dir)
-    pm = pd.read_csv(proc / "player_match_wsl_2324.csv")
+def build_league(key: str, raw_root: str = "data_raw", proc_dir: str = "data/processed") -> pd.DataFrame:
+    lg = LEAGUES[key]
+    raw, proc = Path(raw_root) / lg["slug"], Path(proc_dir)
+    pm = pd.read_csv(proc / f"player_match_{lg['slug']}.csv")
     rows = []
     for mid in pm.match_id.unique():
         ev = json.loads((raw / "events" / f"{mid}.json").read_text())
@@ -159,11 +162,18 @@ def main(raw_dir: str = "data_raw", proc_dir: str = "data/processed") -> None:
     counts = pd.DataFrame(rows)
     pm = pm.merge(counts, on=["match_id", "player_id"], how="left")
     pm[INDICATORS] = pm[INDICATORS].fillna(0.0)
-    pm.to_csv(proc / "player_match_indicators_wsl_2324.csv", index=False)
+    pm.to_csv(proc / f"player_match_indicators_{lg['slug']}.csv", index=False)
     sv = season_versions(pm)
-    sv.to_csv(proc / "player_season_versions_wsl_2324.csv", index=False)
-    print(f"{len(pm)} lignes joueuse × match ; {len(sv)} joueuses-équipes "
+    sv.insert(0, "league", key)
+    sv.to_csv(proc / f"player_season_versions_{lg['slug']}.csv", index=False)
+    print(f"{lg['name']} : {len(pm)} lignes joueuse × match ; {len(sv)} joueuses-équipes "
           f"({sv.eligible_900.sum()} ≥ 900 min, {sv.eligible_5x60.sum()} ≥ 5 matchs de 60 min)")
+    return sv
+
+
+def main(league: str = "wsl", raw_root: str = "data_raw", proc_dir: str = "data/processed") -> None:
+    for key in resolve(league):
+        build_league(key, raw_root, proc_dir)
 
 
 if __name__ == "__main__":

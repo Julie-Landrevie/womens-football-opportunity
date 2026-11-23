@@ -1,0 +1,8 @@
+league,indicateur,joueuses,valeur_titulaire,valeur_entree,ratio_entree_sur_titulaire,ic95_bas,ic95_haut
+wsl,npxg,114,0.127,0.194,1.52,1.18,1.99
+wsl,xa,114,0.112,0.12,1.07,0.82,1.38
+wsl,prog,114,4.144,4.687,1.13,1.0,1.29
+wsl,pressures,114,17.777,19.86,1.12,1.04,1.2
+wsl,ball_wins,114,6.178,6.786,1.1,1.02,1.18
+wsl,ball_receipts,114,40.722,41.021,1.01,0.96,1.05
+wsl,part_possession_equipe,114,0.518,0.511,0.99,0.96,1.02

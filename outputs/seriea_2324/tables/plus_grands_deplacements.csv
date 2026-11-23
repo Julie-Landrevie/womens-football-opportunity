@@ -1,0 +1,51 @@
+league,indicateur,joueuse,equipe,poste,part_possession,percentile_p90,percentile_poss,delta_pts
+seriea,npxg,Sara Caiazzo,Pomigliano,CB,0.4,47.0,70.0,23.3
+seriea,npxg,Alice Corelli,Napoli W,W,0.43,43.0,65.0,21.7
+seriea,npxg,Elisa del Estal,Napoli W,FW,0.43,54.0,75.0,20.8
+seriea,npxg,Emilie Haavi,AS Roma W,W,0.6,48.0,30.0,-17.4
+seriea,npxg,Sofia Cantore,Juventus W,W,0.59,35.0,17.0,-17.4
+seriea,npxg,Cristiana Girelli,Juventus W,FW,0.55,62.0,46.0,-16.7
+seriea,npxg,Liucija Vaitukaitytė,Como W,DM,0.47,46.0,62.0,16.7
+seriea,npxg,Moeka Minami,AS Roma W,CB,0.6,60.0,43.0,-16.7
+seriea,npxg,Paloma Lázaro,Napoli W,FW,0.43,42.0,58.0,16.7
+seriea,npxg,Barbara Bonansea,Juventus W,W,0.57,61.0,48.0,-13.0
+seriea,xa,Valentina Giacinti,AS Roma W,FW,0.61,83.0,42.0,-41.7
+seriea,xa,Laura Bourgouin,Pomigliano,FW,0.39,42.0,71.0,29.2
+seriea,xa,Nora Heroum,Sampdoria W,FB,0.39,33.0,61.0,27.8
+seriea,xa,Gina-Maria Chmielinski,Napoli W,AM,0.42,75.0,100.0,25.0
+seriea,xa,Violah Nambi Ssebunya,Pomigliano,FW,0.42,33.0,58.0,25.0
+seriea,xa,Claudia Mauri,Napoli W,DM,0.41,42.0,62.0,20.8
+seriea,xa,Michela Cambiaghi,FC Internazionale Milano W,FW,0.56,71.0,50.0,-20.8
+seriea,xa,Sara Björk Gunnarsdóttir,Juventus W,DM,0.56,54.0,33.0,-20.8
+seriea,xa,Giada Greggi,AS Roma W,CM,0.61,53.0,33.0,-20.0
+seriea,xa,Eseosa Aigbogun,AS Roma W,FB,0.66,75.0,56.0,-19.4
+seriea,prog,Alice Corelli,Napoli W,W,0.43,30.0,78.0,47.8
+seriea,prog,Gina-Maria Chmielinski,Napoli W,AM,0.42,38.0,75.0,37.5
+seriea,prog,G.Giacobbo,Napoli W,W,0.41,17.0,52.0,34.8
+seriea,prog,Haley Bugeja,FC Internazionale Milano W,W,0.58,57.0,22.0,-34.8
+seriea,prog,Rachel Cuschieri,Sampdoria W,W,0.42,48.0,83.0,34.8
+seriea,prog,Sofia Cantore,Juventus W,W,0.59,83.0,48.0,-34.8
+seriea,prog,Zhanna Ferrario,Pomigliano,DM,0.41,58.0,92.0,33.3
+seriea,prog,Elisabetta Oliviero,Sampdoria W,FB,0.4,58.0,89.0,30.6
+seriea,prog,Eseosa Aigbogun,AS Roma W,FB,0.66,56.0,25.0,-30.6
+seriea,prog,Nicole Arcangeli,Pomigliano,W,0.42,35.0,65.0,30.4
+seriea,pressures,Evelyn Ijeh,AC Milan W,FW,0.54,33.0,79.0,45.8
+seriea,pressures,Taty,Sampdoria W,FW,0.39,58.0,12.0,-45.8
+seriea,pressures,Eseosa Aigbogun,AS Roma W,FB,0.66,53.0,92.0,38.9
+seriea,pressures,Nora Heroum,Sampdoria W,FB,0.39,50.0,11.0,-38.9
+seriea,pressures,Kosovare Asllani,AC Milan W,AM,0.54,50.0,88.0,37.5
+seriea,pressures,Valentina Giacinti,AS Roma W,FW,0.61,54.0,92.0,37.5
+seriea,pressures,Zhanna Ferrario,Pomigliano,DM,0.41,54.0,17.0,-37.5
+seriea,pressures,Elisa Bartoli,AS Roma W,FB,0.59,14.0,50.0,36.1
+seriea,pressures,Marianela Szymanowski Alonso,Pomigliano,FW,0.41,96.0,62.0,-33.3
+seriea,pressures,Maëlle Antonia Garbino,Juventus W,CM,0.6,33.0,67.0,33.3
+seriea,ball_wins,Saki Kumagai,AS Roma W,DM,0.6,42.0,79.0,37.5
+seriea,ball_wins,Eseosa Aigbogun,AS Roma W,FB,0.66,56.0,89.0,33.3
+seriea,ball_wins,Iris Madeleine Rabot,Pomigliano,CM,0.41,60.0,27.0,-33.3
+seriea,ball_wins,Laura Feiersinger,AS Roma W,CM,0.6,33.0,67.0,33.3
+seriea,ball_wins,Maëlle Antonia Garbino,Juventus W,CM,0.6,20.0,53.0,33.3
+seriea,ball_wins,Alice Pellinghelli,Napoli W,FB,0.38,72.0,42.0,-30.6
+seriea,ball_wins,Debora Novellino,Pomigliano,FB,0.4,44.0,14.0,-30.6
+seriea,ball_wins,Cecilia Salvai,Juventus W,CB,0.59,40.0,70.0,30.0
+seriea,ball_wins,Małgorzata Mesjasz,AC Milan W,CB,0.56,33.0,63.0,30.0
+seriea,ball_wins,Moeka Minami,AS Roma W,CB,0.6,37.0,67.0,30.0

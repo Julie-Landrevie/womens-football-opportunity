@@ -1,0 +1,8 @@
+league,indicateur,joueuses,valeur_titulaire,valeur_entree,ratio_entree_sur_titulaire,ic95_bas,ic95_haut
+seriea,npxg,110,0.154,0.202,1.31,1.06,1.6
+seriea,xa,110,0.093,0.121,1.3,1.04,1.6
+seriea,prog,110,3.906,4.466,1.14,1.02,1.28
+seriea,pressures,110,16.528,17.725,1.07,1.01,1.14
+seriea,ball_wins,110,6.267,6.844,1.09,1.02,1.16
+seriea,ball_receipts,110,38.974,39.448,1.01,0.97,1.06
+seriea,part_possession_equipe,110,0.509,0.507,1.0,0.97,1.02

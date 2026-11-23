@@ -1,0 +1,6 @@
+league,indicateur,titulaires_match_complet,p90_avant,p90_fin_de_match,ratio_fin_sur_avant
+wsl,npxg,444,0.099,0.1,1.01
+wsl,xa,444,0.106,0.086,0.82
+wsl,prog,444,4.239,4.038,0.95
+wsl,pressures,444,16.635,13.929,0.84
+wsl,ball_wins,444,6.253,6.399,1.02

@@ -1,7 +1,7 @@
-"""Étape 3 — Classements et stabilité selon la version de l'indicateur (FA WSL 2023/24).
+"""Étape 3 — Classements et stabilité selon la version de l'indicateur, par ligue.
 
-Entrée : data/processed/player_match_indicators_wsl_2324.csv (étape 2).
-Sorties dans outputs/tables/ et un résumé chiffré outputs/resultats_etape3.md.
+Entrée : data/processed/player_match_indicators_<slug>.csv et player_season_versions_<slug>.csv.
+Sorties dans outputs/<slug>/tables/ et un résumé chiffré outputs/<slug>/resultats_etape3.md.
 
 Quatre questions :
   A. Classements : au sein du poste, combien de joueuses changent de place quand on passe
@@ -9,12 +9,13 @@ Quatre questions :
      Avec les deux seuils de sélection (900 min ; 5 matchs de 60 min ou plus).
   B. Remplaçantes et faible temps de jeu : bruit du par 90 selon le temps de jeu ;
      même joueuse titulaire ou entrée en jeu (comparaison intra-joueuse).
-  C. Stabilité : corrélation de rang entre la phase aller (journées 1 à 11) et la phase
-     retour (12 à 22), et entre matchs pairs et impairs, pour chaque version.
+  C. Stabilité : corrélation de rang entre la première phase (chaque adversaire affronté une
+     fois : journées 1 à n_équipes − 1) et le reste de la saison, et entre matchs pairs et
+     impairs, pour chaque version.
   D. Ajustement à l'adversaire sur une demi-saison : change-t-il quelque chose ?
 
 Les percentiles sont toujours calculés au sein du groupe de postes, gardiennes exclues.
-Usage : python src/analyze_rankings.py [dossier_processed] [dossier_outputs]
+Usage : python src/analyze_rankings.py <wsl|fbl|ligaf|seriea|all> [dossier_processed] [dossier_outputs] [dossier_raw]
 Données : StatsBomb Open Data. Crédit : « Data: StatsBomb ».
 """
 import sys
@@ -24,6 +25,7 @@ import numpy as np
 import pandas as pd
 
 from build_indicators import INDICATORS, OFFENSIVE, season_versions
+from leagues import LEAGUES, resolve
 
 VERSIONS = ["total", "p90", "poss", "adj"]
 PAIRS = [("total", "p90"), ("p90", "poss"), ("p90", "adj")]
@@ -72,7 +74,8 @@ def rank_changes(sv: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
                 if tname == "5 matchs de 60 min" and (a, b) == ("p90", "poss"):
                     m = e.assign(delta_pts=(d * 100).round(1),
                                  pct_avant=(pa * 100).round(0), pct_apres=(pb * 100).round(0))
-                    m = m.reindex(m.delta_pts.abs().sort_values(ascending=False).index).head(10)
+                    m = (m.assign(abs_d=m.delta_pts.abs())
+                          .sort_values(["abs_d", "player"], ascending=[False, True]).head(10))
                     for r in m.itertuples():
                         movers.append({"indicateur": k, "joueuse": r.player, "equipe": r.team,
                                        "poste": r.position_group, "part_possession": round(r.team_poss_share, 2),
@@ -180,10 +183,15 @@ def late_game_control(pm: pd.DataFrame, raw_dir: Path, late_minute: int = 65,
     return pd.DataFrame(rows)
 
 
+def first_phase(pm: pd.DataFrame) -> pd.Series:
+    """Première phase : journées 1 à n_équipes − 1 (chaque adversaire affronté une fois)."""
+    return pm.match_week <= pm.team_id.nunique() - 1
+
+
 # ------------------------------------------------------------------- C. stabilité
 def split_stability(pm: pd.DataFrame) -> pd.DataFrame:
     splits = {
-        "aller / retour": pm.match_week <= 11,
+        "1re phase / reste": first_phase(pm),
         "matchs impairs / pairs": None,
     }
     # rang du match pour chaque joueuse (ordre chronologique) → impairs / pairs
@@ -222,7 +230,8 @@ def split_stability(pm: pd.DataFrame) -> pd.DataFrame:
 # ------------------------------------------- D. ajustement adversaire sur demi-saison
 def half_season_adjustment(pm: pd.DataFrame) -> pd.DataFrame:
     rows = []
-    for hname, mask in {"aller": pm.match_week <= 11, "retour": pm.match_week > 11}.items():
+    fp = first_phase(pm)
+    for hname, mask in {"1re phase": fp, "reste de la saison": ~fp}.items():
         h = pm[mask]
         faced = h.groupby("team_id").opponent_id.nunique()
         sv = season_versions(h)
@@ -241,8 +250,8 @@ def half_season_adjustment(pm: pd.DataFrame) -> pd.DataFrame:
 
 
 # --------------------------------------------------------------------- résumé
-def summary_md(rc, movers, noise, subs, late, stab, adj) -> str:
-    L = ["# Étape 3 — Résultats chiffrés (FA WSL 2023/24)", "",
+def summary_md(rc, movers, noise, subs, late, stab, adj, title: str = "FA WSL 2023/24") -> str:
+    L = [f"# Étape 3 — Résultats chiffrés ({title})", "",
          "Généré par `src/analyze_rankings.py`. Percentiles au sein du groupe de postes, gardiennes exclues. "
          "Data: StatsBomb.", ""]
     L += ["## A. Changements de classement (saison complète)", "",
@@ -306,22 +315,24 @@ def summary_md(rc, movers, noise, subs, late, stab, adj) -> str:
     return "\n".join(L) + "\n"
 
 
-def main(proc_dir: str = "data/processed", out_dir: str = "outputs", raw_dir: str = "data_raw") -> None:
-    proc, out = Path(proc_dir), Path(out_dir)
+def analyze_league(key: str, proc_dir: str = "data/processed", out_root: str = "outputs",
+                   raw_root: str = "data_raw") -> dict:
+    lg = LEAGUES[key]
+    proc, out = Path(proc_dir), Path(out_root) / lg["slug"]
+    raw_dir = Path(raw_root) / lg["slug"]
     (out / "tables").mkdir(parents=True, exist_ok=True)
-    pm = pd.read_csv(proc / "player_match_indicators_wsl_2324.csv")
-    sv = pd.read_csv(proc / "player_season_versions_wsl_2324.csv")
+    pm = pd.read_csv(proc / f"player_match_indicators_{lg['slug']}.csv")
+    sv = pd.read_csv(proc / f"player_season_versions_{lg['slug']}.csv")
     rc, movers = rank_changes(sv)
     noise, subs = low_minutes(sv, pm)
-    raw = Path(raw_dir) / "events"
     late = None
-    if raw.exists():
+    if (raw_dir / "events").exists():
         f = pm[pm.position_group != "GK"]
         st = f.groupby("player_id").agg(a=("starter", "sum"), n=("starter", "size"))
         rotation = st[(st.a >= 3) & (st.n - st.a >= 3)].index
-        late = late_game_control(pm, Path(raw_dir), players=rotation)
+        late = late_game_control(pm, raw_dir, players=rotation)
     else:
-        print(f"{raw} absent : contrôle « fin de match » non calculé (lancer src/download.py)")
+        print(f"{raw_dir / 'events'} absent : contrôle « fin de match » non calculé (lancer src/download.py)")
     stab = split_stability(pm)
     adj = half_season_adjustment(pm)
     tables = {"changements_classement": rc, "plus_grands_deplacements": movers,
@@ -330,10 +341,18 @@ def main(proc_dir: str = "data/processed", out_dir: str = "outputs", raw_dir: st
     if late is not None:
         tables["controle_fin_de_match"] = late
     for name, df in tables.items():
+        df.insert(0, "league", key)
         df.to_csv(out / "tables" / f"{name}.csv", index=False)
-    (out / "resultats_etape3.md").write_text(summary_md(rc, movers, noise, subs, late, stab, adj),
-                                             encoding="utf-8")
-    print(f"Étape 3 : {len(tables)} tables dans {out / 'tables'} et résumé {out / 'resultats_etape3.md'}")
+    (out / "resultats_etape3.md").write_text(
+        summary_md(rc, movers, noise, subs, late, stab, adj, title=f"{lg['name']} 2023/24"), encoding="utf-8")
+    print(f"{lg['name']} : {len(tables)} tables dans {out / 'tables'} et résumé {out / 'resultats_etape3.md'}")
+    return tables
+
+
+def main(league: str = "wsl", proc_dir: str = "data/processed", out_root: str = "outputs",
+         raw_root: str = "data_raw") -> None:
+    for key in resolve(league):
+        analyze_league(key, proc_dir, out_root, raw_root)
 
 
 if __name__ == "__main__":

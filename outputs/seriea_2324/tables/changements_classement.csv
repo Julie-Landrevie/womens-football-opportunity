@@ -1,0 +1,31 @@
+league,seuil,n,indicateur,de,vers,spearman,bougent_20pts,part_bougent,corr_delta_possession
+seriea,900 min,131,npxg,total,p90,0.972,15,0.115,0.16
+seriea,900 min,131,npxg,p90,poss,0.988,4,0.031,-0.52
+seriea,900 min,131,npxg,p90,adj,0.997,0,0.0,0.28
+seriea,900 min,131,xa,total,p90,0.952,7,0.053,0.13
+seriea,900 min,131,xa,p90,poss,0.98,7,0.053,-0.61
+seriea,900 min,131,xa,p90,adj,0.996,0,0.0,0.24
+seriea,900 min,131,prog,total,p90,0.873,30,0.229,0.34
+seriea,900 min,131,prog,p90,poss,0.937,21,0.16,-0.67
+seriea,900 min,131,prog,p90,adj,0.991,1,0.008,0.21
+seriea,900 min,131,pressures,total,p90,0.703,59,0.45,0.04
+seriea,900 min,131,pressures,p90,poss,0.919,33,0.252,0.79
+seriea,900 min,131,pressures,p90,adj,0.997,0,0.0,-0.34
+seriea,900 min,131,ball_wins,total,p90,0.769,54,0.412,0.1
+seriea,900 min,131,ball_wins,p90,poss,0.91,32,0.244,0.73
+seriea,900 min,131,ball_wins,p90,adj,0.999,0,0.0,0.02
+seriea,5 matchs de 60 min,160,npxg,total,p90,0.953,28,0.175,0.19
+seriea,5 matchs de 60 min,160,npxg,p90,poss,0.99,3,0.019,-0.55
+seriea,5 matchs de 60 min,160,npxg,p90,adj,0.998,0,0.0,0.22
+seriea,5 matchs de 60 min,160,xa,total,p90,0.909,31,0.194,0.15
+seriea,5 matchs de 60 min,160,xa,p90,poss,0.979,9,0.056,-0.66
+seriea,5 matchs de 60 min,160,xa,p90,adj,0.996,0,0.0,0.26
+seriea,5 matchs de 60 min,160,prog,total,p90,0.783,57,0.356,0.37
+seriea,5 matchs de 60 min,160,prog,p90,poss,0.941,22,0.138,-0.69
+seriea,5 matchs de 60 min,160,prog,p90,adj,0.989,2,0.012,0.16
+seriea,5 matchs de 60 min,160,pressures,total,p90,0.579,88,0.55,0.03
+seriea,5 matchs de 60 min,160,pressures,p90,poss,0.915,43,0.269,0.8
+seriea,5 matchs de 60 min,160,pressures,p90,adj,0.997,0,0.0,-0.32
+seriea,5 matchs de 60 min,160,ball_wins,total,p90,0.628,75,0.469,0.14
+seriea,5 matchs de 60 min,160,ball_wins,p90,poss,0.91,45,0.281,0.73
+seriea,5 matchs de 60 min,160,ball_wins,p90,adj,0.999,0,0.0,0.01

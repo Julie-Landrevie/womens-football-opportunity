@@ -1,0 +1,8 @@
+league,indicateur,joueuses,valeur_titulaire,valeur_entree,ratio_entree_sur_titulaire,ic95_bas,ic95_haut
+fbl,npxg,105,0.141,0.188,1.33,1.0,1.77
+fbl,xa,105,0.083,0.107,1.28,0.93,1.79
+fbl,prog,105,3.227,3.694,1.14,1.02,1.27
+fbl,pressures,105,18.967,19.317,1.02,0.96,1.08
+fbl,ball_wins,105,6.905,7.147,1.03,0.96,1.12
+fbl,ball_receipts,105,38.164,38.248,1.0,0.95,1.05
+fbl,part_possession_equipe,105,0.499,0.508,1.02,0.99,1.05

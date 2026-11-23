@@ -1,0 +1,16 @@
+league,indicateur,tranche,n,part_dans_top10_p90,part_dans_top10_attendue,ecart_type_percentile
+seriea,npxg,< 450 min,70,0.114,0.1,0.333
+seriea,npxg,450-900 min,44,0.091,0.1,0.254
+seriea,npxg,≥ 900 min,131,0.115,0.1,0.256
+seriea,xa,< 450 min,70,0.143,0.1,0.342
+seriea,xa,450-900 min,44,0.068,0.1,0.263
+seriea,xa,≥ 900 min,131,0.107,0.1,0.239
+seriea,prog,< 450 min,70,0.186,0.1,0.356
+seriea,prog,450-900 min,44,0.068,0.1,0.233
+seriea,prog,≥ 900 min,131,0.084,0.1,0.263
+seriea,pressures,< 450 min,70,0.2,0.1,0.353
+seriea,pressures,450-900 min,44,0.068,0.1,0.272
+seriea,pressures,≥ 900 min,131,0.076,0.1,0.255
+seriea,ball_wins,< 450 min,70,0.143,0.1,0.35
+seriea,ball_wins,450-900 min,44,0.091,0.1,0.254
+seriea,ball_wins,≥ 900 min,131,0.099,0.1,0.253

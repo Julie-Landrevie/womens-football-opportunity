@@ -1,0 +1,21 @@
+league,moitie,adversaires_distincts_par_equipe,groupe,n,indicateur,ecart_adj_p90_max,ecart_adj_p90_median,bougent_20pts
+wsl,1re phase,11,≥ 450 min,143,npxg,0.325,0.035,0
+wsl,1re phase,11,≥ 450 min,143,xa,0.33,0.041,0
+wsl,1re phase,11,≥ 450 min,143,prog,0.261,0.023,2
+wsl,1re phase,11,≥ 450 min,143,pressures,0.057,0.011,2
+wsl,1re phase,11,≥ 450 min,143,ball_wins,0.044,0.007,0
+wsl,1re phase,11,"≥ 3 matchs, < 450 min",70,npxg,0.648,0.092,3
+wsl,1re phase,11,"≥ 3 matchs, < 450 min",70,xa,0.448,0.11,1
+wsl,1re phase,11,"≥ 3 matchs, < 450 min",70,prog,0.467,0.083,2
+wsl,1re phase,11,"≥ 3 matchs, < 450 min",70,pressures,0.14,0.025,0
+wsl,1re phase,11,"≥ 3 matchs, < 450 min",70,ball_wins,0.076,0.017,0
+wsl,reste de la saison,11,≥ 450 min,138,npxg,0.179,0.031,0
+wsl,reste de la saison,11,≥ 450 min,138,xa,0.265,0.035,0
+wsl,reste de la saison,11,≥ 450 min,138,prog,0.187,0.028,0
+wsl,reste de la saison,11,≥ 450 min,138,pressures,0.068,0.012,0
+wsl,reste de la saison,11,≥ 450 min,138,ball_wins,0.044,0.008,0
+wsl,reste de la saison,11,"≥ 3 matchs, < 450 min",76,npxg,0.354,0.096,0
+wsl,reste de la saison,11,"≥ 3 matchs, < 450 min",76,xa,0.281,0.093,0
+wsl,reste de la saison,11,"≥ 3 matchs, < 450 min",76,prog,0.285,0.089,9
+wsl,reste de la saison,11,"≥ 3 matchs, < 450 min",76,pressures,0.143,0.033,3
+wsl,reste de la saison,11,"≥ 3 matchs, < 450 min",76,ball_wins,0.078,0.018,0

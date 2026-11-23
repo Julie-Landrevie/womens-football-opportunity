@@ -137,3 +137,36 @@ def test_percentile_within_position():
 def test_spearman():
     assert spearman(pd.Series([1, 2, 3]), pd.Series([10, 20, 30])) == pytest.approx(1.0)
     assert spearman(pd.Series([1, 2, 3]), pd.Series([3, 2, 1])) == pytest.approx(-1.0)
+
+
+# ------------------------------------------------------------------ étape 4 : ligues, application
+def test_resolve_leagues():
+    from leagues import resolve
+    assert resolve("all") == ["wsl", "fbl", "ligaf", "seriea"]
+    assert resolve("wsl,seriea") == ["wsl", "seriea"]
+    with pytest.raises(SystemExit):
+        resolve("d1arkema")
+
+
+def test_first_phase_is_one_round_robin():
+    from analyze_rankings import first_phase
+    # 4 équipes → 1re phase = journées 1 à 3 (chaque adversaire une fois)
+    pm = pd.DataFrame({"team_id": [1, 2, 3, 4] * 6, "match_week": sorted(list(range(1, 7)) * 4)})
+    fp = first_phase(pm)
+    assert set(pm[fp].match_week) == {1, 2, 3}
+    assert set(pm[~fp].match_week) == {4, 5, 6}
+
+
+def test_app_runs_without_error():
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+    root = Path(__file__).resolve().parents[1]
+    if not (root / "data/processed/player_season_versions_all_2324.csv").exists():
+        pytest.skip("table commune absente : lancer src/compare_leagues.py")
+    at = AppTest.from_file(str(root / "streamlit_app.py"), default_timeout=60).run()
+    assert not at.exception
+    at.sidebar.selectbox[0].set_value("Serie A Women").run()
+    at.sidebar.selectbox[1].set_value("FW").run()
+    at.sidebar.selectbox[3].set_value("total").run()
+    at.sidebar.radio[0].set_value("eligible_900").run()
+    assert not at.exception

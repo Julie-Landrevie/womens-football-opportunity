@@ -97,11 +97,11 @@ Contrôle « fin de match » : les mêmes joueuses, quand elles sont titulaires 
 
 | Découpage | Indicateur | Par 90 | Par possession | Ajusté adversaire |
 |---|---|---|---|---|
-| aller / retour (n = 103) | xG hors penalties | 0.79 [0.68-0.86] · poste 0.50 | 0.78 [0.67-0.86] · poste 0.48 (écart -0.09 à +0.05) | 0.78 [0.68-0.86] · poste 0.51 (écart -0.03 à +0.06) |
-| aller / retour (n = 103) | xA | 0.72 [0.60-0.80] · poste 0.43 | 0.67 [0.54-0.77] · poste 0.37 (écart -0.15 à +0.03) | 0.73 [0.63-0.80] · poste 0.48 (écart +0.01 à +0.11) |
-| aller / retour (n = 103) | actions progressives | 0.83 [0.74-0.89] · poste 0.69 | 0.79 [0.68-0.86] · poste 0.58 (écart -0.22 à +0.00) | 0.84 [0.75-0.90] · poste 0.70 (écart -0.04 à +0.06) |
-| aller / retour (n = 103) | pressions | 0.90 [0.85-0.94] · poste 0.79 | 0.86 [0.78-0.91] · poste 0.69 (écart -0.21 à -0.00) | 0.90 [0.84-0.93] · poste 0.78 (écart -0.04 à +0.03) |
-| aller / retour (n = 103) | ballons gagnés | 0.63 [0.49-0.75] · poste 0.51 | 0.74 [0.62-0.82] · poste 0.67 (écart +0.05 à +0.27) | 0.63 [0.49-0.75] · poste 0.53 (écart -0.01 à +0.07) |
+| 1re phase / reste (n = 103) | xG hors penalties | 0.79 [0.68-0.86] · poste 0.50 | 0.78 [0.67-0.86] · poste 0.48 (écart -0.09 à +0.05) | 0.78 [0.68-0.86] · poste 0.51 (écart -0.03 à +0.06) |
+| 1re phase / reste (n = 103) | xA | 0.72 [0.60-0.80] · poste 0.43 | 0.67 [0.54-0.77] · poste 0.37 (écart -0.15 à +0.03) | 0.73 [0.63-0.80] · poste 0.48 (écart +0.01 à +0.11) |
+| 1re phase / reste (n = 103) | actions progressives | 0.83 [0.74-0.89] · poste 0.69 | 0.79 [0.68-0.86] · poste 0.58 (écart -0.22 à +0.00) | 0.84 [0.75-0.90] · poste 0.70 (écart -0.04 à +0.06) |
+| 1re phase / reste (n = 103) | pressions | 0.90 [0.85-0.94] · poste 0.79 | 0.86 [0.78-0.91] · poste 0.69 (écart -0.21 à -0.00) | 0.90 [0.84-0.93] · poste 0.78 (écart -0.04 à +0.03) |
+| 1re phase / reste (n = 103) | ballons gagnés | 0.63 [0.49-0.75] · poste 0.51 | 0.74 [0.62-0.82] · poste 0.67 (écart +0.05 à +0.27) | 0.63 [0.49-0.75] · poste 0.53 (écart -0.01 à +0.07) |
 | matchs impairs / pairs (n = 134) | xG hors penalties | 0.76 [0.66-0.82] · poste 0.57 | 0.74 [0.65-0.82] · poste 0.46 (écart -0.18 à -0.04) | 0.76 [0.67-0.83] · poste 0.59 (écart -0.02 à +0.08) |
 | matchs impairs / pairs (n = 134) | xA | 0.66 [0.53-0.75] · poste 0.36 | 0.64 [0.52-0.74] · poste 0.29 (écart -0.14 à -0.03) | 0.67 [0.56-0.76] · poste 0.38 (écart -0.02 à +0.06) |
 | matchs impairs / pairs (n = 134) | actions progressives | 0.82 [0.74-0.87] · poste 0.69 | 0.80 [0.72-0.86] · poste 0.58 (écart -0.19 à -0.02) | 0.86 [0.80-0.91] · poste 0.75 (écart +0.01 à +0.11) |
@@ -112,23 +112,23 @@ Contrôle « fin de match » : les mêmes joueuses, quand elles sont titulaires 
 
 | Moitié | Groupe | Indicateur | Écart max adj / par 90 | Écart médian | Bougent ≥ 20 pts |
 |---|---|---|---|---|---|
-| aller (11 adversaires) | ≥ 450 min (n = 143) | xG hors penalties | 32% | 3.5% | 0 |
-| aller (11 adversaires) | ≥ 450 min (n = 143) | xA | 33% | 4.1% | 0 |
-| aller (11 adversaires) | ≥ 450 min (n = 143) | actions progressives | 26% | 2.3% | 2 |
-| aller (11 adversaires) | ≥ 450 min (n = 143) | pressions | 6% | 1.1% | 2 |
-| aller (11 adversaires) | ≥ 450 min (n = 143) | ballons gagnés | 4% | 0.7% | 0 |
-| aller (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | xG hors penalties | 65% | 9.2% | 3 |
-| aller (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | xA | 45% | 11.0% | 1 |
-| aller (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | actions progressives | 47% | 8.3% | 2 |
-| aller (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | pressions | 14% | 2.5% | 0 |
-| aller (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | ballons gagnés | 8% | 1.7% | 0 |
-| retour (11 adversaires) | ≥ 450 min (n = 138) | xG hors penalties | 18% | 3.1% | 0 |
-| retour (11 adversaires) | ≥ 450 min (n = 138) | xA | 26% | 3.5% | 0 |
-| retour (11 adversaires) | ≥ 450 min (n = 138) | actions progressives | 19% | 2.8% | 0 |
-| retour (11 adversaires) | ≥ 450 min (n = 138) | pressions | 7% | 1.2% | 0 |
-| retour (11 adversaires) | ≥ 450 min (n = 138) | ballons gagnés | 4% | 0.8% | 0 |
-| retour (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | xG hors penalties | 35% | 9.6% | 0 |
-| retour (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | xA | 28% | 9.3% | 0 |
-| retour (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | actions progressives | 28% | 8.9% | 9 |
-| retour (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | pressions | 14% | 3.3% | 3 |
-| retour (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | ballons gagnés | 8% | 1.8% | 0 |
+| 1re phase (11 adversaires) | ≥ 450 min (n = 143) | xG hors penalties | 32% | 3.5% | 0 |
+| 1re phase (11 adversaires) | ≥ 450 min (n = 143) | xA | 33% | 4.1% | 0 |
+| 1re phase (11 adversaires) | ≥ 450 min (n = 143) | actions progressives | 26% | 2.3% | 2 |
+| 1re phase (11 adversaires) | ≥ 450 min (n = 143) | pressions | 6% | 1.1% | 2 |
+| 1re phase (11 adversaires) | ≥ 450 min (n = 143) | ballons gagnés | 4% | 0.7% | 0 |
+| 1re phase (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | xG hors penalties | 65% | 9.2% | 3 |
+| 1re phase (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | xA | 45% | 11.0% | 1 |
+| 1re phase (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | actions progressives | 47% | 8.3% | 2 |
+| 1re phase (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | pressions | 14% | 2.5% | 0 |
+| 1re phase (11 adversaires) | ≥ 3 matchs, < 450 min (n = 70) | ballons gagnés | 8% | 1.7% | 0 |
+| reste de la saison (11 adversaires) | ≥ 450 min (n = 138) | xG hors penalties | 18% | 3.1% | 0 |
+| reste de la saison (11 adversaires) | ≥ 450 min (n = 138) | xA | 26% | 3.5% | 0 |
+| reste de la saison (11 adversaires) | ≥ 450 min (n = 138) | actions progressives | 19% | 2.8% | 0 |
+| reste de la saison (11 adversaires) | ≥ 450 min (n = 138) | pressions | 7% | 1.2% | 0 |
+| reste de la saison (11 adversaires) | ≥ 450 min (n = 138) | ballons gagnés | 4% | 0.8% | 0 |
+| reste de la saison (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | xG hors penalties | 35% | 9.6% | 0 |
+| reste de la saison (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | xA | 28% | 9.3% | 0 |
+| reste de la saison (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | actions progressives | 28% | 8.9% | 9 |
+| reste de la saison (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | pressions | 14% | 3.3% | 3 |
+| reste de la saison (11 adversaires) | ≥ 3 matchs, < 450 min (n = 76) | ballons gagnés | 8% | 1.8% | 0 |

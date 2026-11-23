@@ -1,0 +1,8 @@
+league,indicateur,joueuses,valeur_titulaire,valeur_entree,ratio_entree_sur_titulaire,ic95_bas,ic95_haut
+ligaf,npxg,208,0.133,0.183,1.37,1.17,1.61
+ligaf,xa,208,0.097,0.122,1.26,1.07,1.46
+ligaf,prog,208,3.672,4.198,1.14,1.03,1.26
+ligaf,pressures,208,17.606,19.329,1.1,1.05,1.14
+ligaf,ball_wins,208,6.449,6.818,1.06,1.01,1.11
+ligaf,ball_receipts,208,41.272,41.491,1.01,0.96,1.04
+ligaf,part_possession_equipe,208,0.511,0.512,1.0,0.98,1.03
